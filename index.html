@@ -601,40 +601,82 @@
 
     
 
-        <!-- TESTIMONIALS & FEEDBACK (2 SALES MANAGERS: LITHUANIA & FRANCE) -->
+            <!-- TESTIMONIALS & FEEDBACK (2 SALES MANAGERS: LITHUANIA & FRANCE) -->
     <section class="testimonials-section section gray-bg">
         <div class="container">
             <h2 class="section-title">Результати досліджень та фідбек сейлз-команд</h2>
             
-            <div class="quotes-grid" style="grid-template-columns: 1fr 1fr; gap: 28px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;">
                 
                 <!-- Mykyta (Lithuania/Latvia) -->
-                <div class="quote-card">
-                    <div class="quote-text">
-                        «Клієнти постійно стикаються з технічними помилками і звертаються до нас із питанням: "Що ми робимо не так?". Доводилось копіювати логи в Gemini, щоб розшифрувати їх. Вбудовані AI-підказки та вибір стандартних розмірів посилки S/M/L суттєво полегшать онбординг клієнтів. А генерація впорядкованого PDF в 1 клік назавжди зніме проблему пересорту маркувань на складі.»
-                    </div>
-                    <div class="user-profile" style="align-items: center; gap: 8px;">
+                <div class="quote-card" style="padding: 30px; display: flex; flex-direction: column; gap: 18px;">
+                    <div class="user-profile" style="align-items: center; border-bottom: 2px solid #f0f0f0; padding-bottom: 14px;">
                         <div class="user-info">
-                            <h5 style="font-size: 1.05rem; font-weight: 800; color: var(--dark); margin: 0 0 4px;">Микита</h5>
-                            <span style="font-size: 0.85rem; color: #666; display: flex; align-items: center; gap: 6px;">
-                                <img src="https://flagcdn.com/w20/lt.png" alt="LT" style="width:18px;height:12px;border-radius:2px;"> Сейлз-менеджер | Литва / Латвія
+                            <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--dark); margin: 0 0 4px;">Микита</h4>
+                            <span style="font-size: 0.85rem; font-weight: 600; color: #555; display: flex; align-items: center; gap: 6px;">
+                                <img src="https://flagcdn.com/w20/lt.png" alt="LT" style="width:20px;height:14px;border-radius:2px;"> Сейлз-менеджер | Литва / Латвія
                             </span>
                         </div>
+                    </div>
+
+                    <!-- Topic 1: AI & Errors -->
+                    <div style="background: #fff8f8; border-left: 4px solid var(--np-red); padding: 14px 16px; border-radius: 0 8px 8px 0;">
+                        <strong style="display: block; font-size: 0.8rem; text-transform: uppercase; color: var(--np-red); margin-bottom: 6px; letter-spacing: 0.5px;">🤖 Про помилки імпорту та AI-асистент</strong>
+                        <p style="margin: 0; font-size: 0.88rem; font-style: italic; color: #333; line-height: 1.6;">
+                            «Клієнти постійно стикаються з технічними помилками і пишуть нам: "Що ми робимо не так?" Доводилось копіювати логи в Gemini, щоб розшифрувати їх. Вбудовані AI-підказки та пояснення людською мовою дозволять клієнтам виправляти все самостійно без нашого залучення.»
+                        </p>
+                    </div>
+
+                    <!-- Topic 2: Dimensions -->
+                    <div style="background: #fbfbfb; border-left: 4px solid #4b5563; padding: 14px 16px; border-radius: 0 8px 8px 0;">
+                        <strong style="display: block; font-size: 0.8rem; text-transform: uppercase; color: #4b5563; margin-bottom: 6px; letter-spacing: 0.5px;">📦 Про ручне введення габаритів</strong>
+                        <p style="margin: 0; font-size: 0.88rem; font-style: italic; color: #333; line-height: 1.6;">
+                            «Для звичайних відправок по Європі клієнтам важко вбивати Д×Ш×В на кожну коробку окремо. Готові стандартні розміри посилки (S/M/L) в 1 клік — це колосальне спрощення, яке зніме 85% щоденних збоїв.»
+                        </p>
+                    </div>
+
+                    <!-- Topic 3: Ordered PDF -->
+                    <div style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 16px; border-radius: 0 8px 8px 0;">
+                        <strong style="display: block; font-size: 0.8rem; text-transform: uppercase; color: #16a34a; margin-bottom: 6px; letter-spacing: 0.5px;">🏷️ Про порядок друку маркувань (Ordered PDF)</strong>
+                        <p style="margin: 0; font-size: 0.88rem; font-style: italic; color: #333; line-height: 1.6;">
+                            «Якщо відправляти 300 посилок — система видає файли вроздріб у хаотичному порядку. Без самописних макросів на складі був би хаос. Вивантаження впорядкованого PDF в 1 клік зекономить до 40 хвилин на кожній партії та усуне пересорт.»
+                        </p>
                     </div>
                 </div>
 
                 <!-- Sales France -->
-                <div class="quote-card">
-                    <div class="quote-text">
-                        «Коли нові клієнти передають адреси одним рядком або бачать перевантажений шаблон на 90+ колонок, вони губляться і не можуть самостійно запустити відправки. Можливість налаштувати лише потрібні стовпці та автопарсинг адрес знімуть головний бар'єр для масштабування клієнтів у Франції. А автокорекція розбіжностей у вазі інвойсу прибере масові блокування партій.»
-                    </div>
-                    <div class="user-profile" style="align-items: center; gap: 8px;">
+                <div class="quote-card" style="padding: 30px; display: flex; flex-direction: column; gap: 18px;">
+                    <div class="user-profile" style="align-items: center; border-bottom: 2px solid #f0f0f0; padding-bottom: 14px;">
                         <div class="user-info">
-                            <h5 style="font-size: 1.05rem; font-weight: 800; color: var(--dark); margin: 0 0 4px;">Сейлз-команда</h5>
-                            <span style="font-size: 0.85rem; color: #666; display: flex; align-items: center; gap: 6px;">
-                                <img src="https://flagcdn.com/w20/fr.png" alt="FR" style="width:18px;height:12px;border-radius:2px;"> Сейлз-менеджер | Франція
+                            <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--dark); margin: 0 0 4px;">Сейлз-команда</h4>
+                            <span style="font-size: 0.85rem; font-weight: 600; color: #555; display: flex; align-items: center; gap: 6px;">
+                                <img src="https://flagcdn.com/w20/fr.png" alt="FR" style="width:20px;height:14px;border-radius:2px;"> Сейлз-менеджер | Франція
                             </span>
                         </div>
+                    </div>
+
+                    <!-- Topic 1: Addresses -->
+                    <div style="background: #fff8f8; border-left: 4px solid var(--np-red); padding: 14px 16px; border-radius: 0 8px 8px 0;">
+                        <strong style="display: block; font-size: 0.8rem; text-transform: uppercase; color: var(--np-red); margin-bottom: 6px; letter-spacing: 0.5px;">🗺️ Про адреси одним рядком</strong>
+                        <p style="margin: 0; font-size: 0.88rem; font-style: italic; color: #333; line-height: 1.6;">
+                            «Клієнти надають адреси суцільним рядком. Коли доводилося розбивати їх формулами Excel, губилися номери квартир, і кур'єр повертав посилки. Автоматичний парсер адрес повністю вирішує цей ризик повернень.»
+                        </p>
+                    </div>
+
+                    <!-- Topic 2: 90+ Columns -->
+                    <div style="background: #fbfbfb; border-left: 4px solid #4b5563; padding: 14px 16px; border-radius: 0 8px 8px 0;">
+                        <strong style="display: block; font-size: 0.8rem; text-transform: uppercase; color: #4b5563; margin-bottom: 6px; letter-spacing: 0.5px;">📊 Про перевантажений шаблон (90+ колонок)</strong>
+                        <p style="margin: 0; font-size: 0.88rem; font-style: italic; color: #333; line-height: 1.6;">
+                            «Коли нові клієнти бачать шаблон на 90+ колонок із митними та фінансовими полями, вони лякаються і не можуть запустити відправки. Можливість приховати зайві стовпці та зберегти свій шаблон зніме головний бар'єр підключення бізнесів у Франції.»
+                        </p>
+                    </div>
+
+                    <!-- Topic 3: Invoice Weight -->
+                    <div style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 16px; border-radius: 0 8px 8px 0;">
+                        <strong style="display: block; font-size: 0.8rem; text-transform: uppercase; color: #16a34a; margin-bottom: 6px; letter-spacing: 0.5px;">⚖️ Про невідповідність ваги інвойсу</strong>
+                        <p style="margin: 0; font-size: 0.88rem; font-style: italic; color: #333; line-height: 1.6;">
+                            «У відправників часто по 7–10 товарних позицій в інвойсі. Через округлення вага роз'їжджається на 0.01 кг — і система блокує весь файл на 20 замовлень. Автокорекція ваги інвойсу прибере масові збої при імпорті великих партій.»
+                        </p>
                     </div>
                 </div>
 
