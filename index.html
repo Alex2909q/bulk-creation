@@ -18,48 +18,32 @@
         .section-title .hl { color: var(--np-red); }
 
         /* Hero */
-        .hero { min-height: 100vh; background: linear-gradient(135deg,rgba(0,0,0,.88),rgba(30,0,0,.85)),url('https://images.unsplash.com/photo-1586528116493-da5c8e65b13a?w=1600') center/cover; display:flex; align-items:center; color:#fff; position:relative; overflow:hidden; }
+        .hero { min-height: 90vh; background: linear-gradient(135deg,rgba(0,0,0,.88),rgba(30,0,0,.85)),url('https://images.unsplash.com/photo-1586528116493-da5c8e65b13a?w=1600') center/cover; display:flex; align-items:center; color:#fff; position:relative; overflow:hidden; }
         .hero-bg-icon { position:absolute; opacity:.05; font-size:240px; pointer-events:none; }
         .badge { display:inline-block; background:var(--np-red); color:#fff; font-size:.78rem; font-weight:700; padding:6px 16px; border-radius:20px; text-transform:uppercase; letter-spacing:1px; margin-bottom:20px; }
-        .hero h1 { font-size:3.6rem; font-weight:800; line-height:1.1; margin:0 0 16px; }
+        .hero h1 { font-size:3.4rem; font-weight:800; line-height:1.15; margin:0 0 16px; }
         .hero h1 .hl { color:var(--np-red); }
-        .hero-sub { font-size:1.1rem; opacity:.85; max-width:560px; margin-bottom:36px; }
-        .btn { display:inline-block; background:var(--np-red); color:#fff; border:none; padding:16px 36px; font-size:1rem; font-weight:700; border-radius:8px; cursor:pointer; font-family:inherit; transition:all .2s; }
+        .hero-sub { font-size:1.15rem; opacity:.9; max-width:620px; margin-bottom:36px; line-height:1.6; }
+        .btn { display:inline-block; background:var(--np-red); color:#fff; border:none; padding:16px 36px; font-size:1rem; font-weight:700; border-radius:8px; cursor:pointer; font-family:inherit; transition:all .2s; text-decoration:none; }
         .btn:hover { background:#c0171c; transform:translateY(-2px); box-shadow:0 8px 24px rgba(227,30,36,.35); }
 
-        /* Stats Banner */
-        .stats-banner { background:var(--np-red); color:#fff; padding:40px 0; }
-        .stats-grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center; }
-        .stat-big .num { font-size:2.4rem; font-weight:800; line-height:1; }
-        .stat-big .lbl { font-size:.82rem; opacity:.9; margin-top:6px; }
-
         /* Vision */
-        .vision-card { background:#fff; border-radius:20px; padding:48px; box-shadow:0 8px 40px rgba(0,0,0,.1); display:grid; grid-template-columns:180px 1fr; gap:40px; align-items:center; }
-        .vision-photo { width:180px; height:180px; border-radius:50%; object-fit:cover; border:4px solid var(--np-red); }
-        .vision-headline { font-size:1.4rem; font-weight:800; margin:0 0 16px; }
-        .vision-body { font-size:.92rem; color:#555; line-height:1.75; margin:0 0 16px; }
-        .vision-author strong { display:block; font-weight:800; }
-        .vision-author span { font-size:.85rem; color:#888; }
+        .vision-card { background:#fff; border-radius:20px; padding:44px; box-shadow:0 8px 40px rgba(0,0,0,.08); display:grid; grid-template-columns:160px 1fr; gap:36px; align-items:center; border-left:6px solid var(--np-red); }
+        .vision-photo { width:160px; height:160px; border-radius:50%; object-fit:cover; border:3px solid var(--np-red); }
+        .vision-headline { font-size:1.35rem; font-weight:800; margin:0 0 14px; line-height:1.35; }
+        .vision-body { font-size:.95rem; color:#444; line-height:1.7; margin:0 0 14px; }
+        .vision-author strong { display:block; font-weight:800; font-size:.95rem; }
+        .vision-author span { font-size:.85rem; color:#777; }
 
-        /* AS IS / TO BE */
-        .compare-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
-        .card { border-radius:16px; padding:36px; }
-        .card-old { background:#fff; border:2px solid #e0e0e0; border-top:6px solid #bbb; }
-        .card-new { background:#fffcfc; border:2px solid #f5c0c2; border-top:6px solid var(--np-red); }
-        .card h2 { font-size:1rem; font-weight:800; text-transform:uppercase; margin:0 0 24px; letter-spacing:.5px; }
-        .flist { list-style:none; padding:0; margin:0; }
-        .flist li { padding:10px 0 10px 28px; border-bottom:1px solid #f0f0f0; position:relative; font-size:.95rem; }
-        .flist li:last-child { border-bottom:none; }
-        .flist li::before { position:absolute; left:0; top:10px; font-weight:700; font-size:.85rem; }
-        .card-old .flist li::before { content:"❌"; }
-        .card-new .flist li::before { content:"✅"; }
-        .flist li strong { display:block; margin-bottom:3px; }
+        /* AS IS Single Block */
+        .as-is-box { background:#fff; border:2px solid #e0e0e0; border-top:6px solid #888; border-radius:16px; padding:32px 36px; margin-bottom:36px; }
+        .as-is-box h3 { font-size:1.1rem; font-weight:800; text-transform:uppercase; margin:0 0 20px; letter-spacing:.5px; color:#c0171c; }
 
         /* Problem Statement cards */
         .ps-grid { display:grid; gap:24px; }
-        .ps-card { background:#fff; border-radius:16px; padding:32px 36px; border-left:6px solid var(--np-red); box-shadow:0 4px 20px rgba(0,0,0,.06); display:grid; grid-template-columns:1fr 300px; gap:32px; }
+        .ps-card { background:#fff; border-radius:16px; padding:32px 36px; border-left:6px solid var(--np-red); box-shadow:0 4px 20px rgba(0,0,0,.06); display:grid; grid-template-columns:1fr 310px; gap:32px; }
         .ps-num { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; background:var(--np-red); color:#fff; border-radius:50%; font-weight:800; font-size:1rem; margin-bottom:14px; }
-        .ps-title { font-size:1.15rem; font-weight:800; margin:0 0 12px; }
+        .ps-title { font-size:1.15rem; font-weight:800; margin:0 0 12px; line-height:1.35; color:#111; }
         .ps-body { font-size:.93rem; line-height:1.7; color:#333; }
         .ps-quote { background:#fdf3f3; border-left:4px solid var(--np-red); padding:14px 18px; border-radius:0 8px 8px 0; font-size:.88rem; font-style:italic; margin:12px 0; color:#444; }
         .ps-quote cite { display:block; margin-top:6px; font-style:normal; font-weight:700; font-size:.8rem; color:var(--np-red); }
@@ -94,6 +78,14 @@
         .tag-bad { background:#fef0f0; color:#c0171c; }
         .tag-neu { background:#f0f0f0; color:#555; }
         .bench-zasilkovna { grid-template-columns:repeat(4,1fr); }
+
+        /* TO BE Targeted Solution Section */
+        .tobe-container { background:linear-gradient(135deg,#ffffff 0%,#fff5f5 100%); border:2px solid #f5c0c2; border-top:8px solid var(--np-red); border-radius:20px; padding:44px; box-shadow:0 12px 40px rgba(227,30,36,.08); }
+        .tobe-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:28px; }
+        .tobe-card { background:#fff; border-radius:14px; padding:24px; border:1px solid #fedcdc; box-shadow:0 4px 14px rgba(0,0,0,.04); }
+        .tobe-card .icon { font-size:1.8rem; margin-bottom:10px; }
+        .tobe-card h4 { font-size:1rem; font-weight:800; margin:0 0 8px; color:var(--dark); }
+        .tobe-card p { font-size:.88rem; color:#555; margin:0; line-height:1.6; }
 
         /* Insights */
         .insight-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:48px; }
@@ -136,7 +128,7 @@
         .lb-close { position:absolute; top:20px; right:28px; color:#fff; font-size:2.5rem; cursor:pointer; line-height:1; }
 
         @media(max-width:900px){
-            .ps-card,.compare-grid,.jtbd-grid,.quotes-grid,.insight-grid,.stats-grid-4 { grid-template-columns:1fr; }
+            .ps-card,.jtbd-grid,.quotes-grid,.insight-grid,.tobe-grid { grid-template-columns:1fr; }
             .bench-screens,.bench-zasilkovna { grid-template-columns:1fr 1fr; }
             .hero h1 { font-size:2.4rem; }
             .vision-card { grid-template-columns:1fr; text-align:center; }
@@ -154,130 +146,101 @@
     <div class="container">
         <div class="badge">Product Council | 22.08.2026</div>
         <h1>Масове створення посилок 2.0:<br><span class="hl">Від хаосу до одного кліку</span></h1>
-        <p class="hero-sub">За 2,5 місяці — 180 011 помилок. Конверсія в успішне створення — 14%.<br>Це не проблема клієнтів. Це проблема системи.</p>
-        <button class="btn" onclick="document.getElementById('problem').scrollIntoView({behavior:'smooth'})">Розібратись ↓</button>
+        <p class="hero-sub">Перетворюємо масовий імпорт на безперебійний інструмент масштабування для B2B-клієнтів.</p>
+        <button class="btn" onclick="document.getElementById('vision').scrollIntoView({behavior:'smooth'})">Ознайомитися з проєктом ↓</button>
     </div>
 </section>
-
-<!-- STATS BANNER -->
-<div class="stats-banner">
-    <div class="container">
-        <div class="stats-grid-4">
-            <div class="stat-big"><div class="num">180 011</div><div class="lbl">Помилок за 2,5 місяці</div></div>
-            <div class="stat-big"><div class="num">14%</div><div class="lbl">Конверсія в успішне<br>створення посилки</div></div>
-            <div class="stat-big"><div class="num">85%</div><div class="lbl">Помилок через<br>відсутні габарити</div></div>
-            <div class="stat-big"><div class="num">14 000</div><div class="lbl">Посилок через механізм<br>за 2 місяці</div></div>
-        </div>
-    </div>
-</div>
 
 <!-- VISION -->
-<section class="section" style="background:#fff;">
+<section id="vision" class="section" style="background:#fff;">
     <div class="container">
         <div class="vision-card">
-            <img src="nova-poshta-1.jpg" class="vision-photo" alt="Nova Post" onerror="this.src='https://via.placeholder.com/180?text=NP'">
+            <img src="nova-poshta-1.jpg" class="vision-photo" alt="Володимир Поперешнюк" onerror="this.src='https://via.placeholder.com/160?text=NP'">
             <div>
-                <h3 class="vision-headline">«Клієнт не повинен знати, як влаштована система зсередині.»</h3>
-                <p class="vision-body">Масове завантаження відправлень — ключова операція B2B-бізнесу. Клієнт формує файл, очікуючи, що система адаптується під його дані: нормалізує телефони, розбере адреси, підставить правильні габарити. Натомість він отримує 180 тисяч технічних помилок мовою розробників.<br><br>Мета цього проєкту — зробити так, щоб правильний файл ніколи не відхилявся, помилковий — виправлявся автоматично або з чіткою людською підказкою.</p>
-                <div class="vision-author"><strong>Команда продукту, Nova Post</strong><span>Product Council, серпень 2026</span></div>
+                <h3 class="vision-headline">«Логістика має прискорювати бізнес, а не зупиняти його помилками.»</h3>
+                <p class="vision-body">Масове створення відправлень — це основа B2B-продажів. Ми маємо перетворити складний імпорт на бездоганний досвід: система повинна сама підлаштовуватися під файли клієнта, розуміти дані без зайвих вимог та видавати готові маркування в 1 клік.</p>
+                <div class="vision-author"><strong>Володимир Поперешнюк</strong><span>Співзасновник Nova Post</span></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- AS IS / TO BE -->
-<section id="problem" class="section gray-bg">
+<!-- PROBLEM STATEMENTS -->
+<section id="problems" class="section gray-bg">
     <div class="container">
-        <h2 class="section-title">Стан системи: <span class="hl">AS IS → TO BE</span></h2>
-        <div class="compare-grid">
-            <div class="card card-old">
-                <h2>❌ Поточний стан (AS IS)</h2>
-                <ul class="flist">
-                    <li><strong>90+ колонок без контексту</strong>Клієнт бачить COD, митні поля та інвойси навіть при простій внутрішній доставці.</li>
-                    <li><strong>Жорстка валідація без нормалізації</strong>Пробіл у телефоні або суцільна адреса — блокування всього файлу.</li>
-                    <li><strong>Технічні тексти помилок</strong>«parcel_0», «float», «validation.*» — клієнт не знає, що виправити.</li>
-                    <li><strong>Ручні PDF у хаотичному порядку</strong>7 кроків через зовнішні макроси та сайти для отримання лейб.</li>
-                    <li><strong>Сирі API-помилки партнерів</strong>JSON від DPD/DHL прямо на екрані при правильному файлі.</li>
-                </ul>
-            </div>
-            <div class="card card-new">
-                <h2>✅ Цільовий стан (TO BE)</h2>
-                <ul class="flist">
-                    <li><strong>Динамічний UI + пресети габаритів</strong>Лише релевантні поля. Розмір коробки — один клік (XS/S/M/L/XL).</li>
-                    <li><strong>Smart Pre-Validation</strong>Авто-нормалізація телефонів, адрес, ваги і HS-кодів до валідації.</li>
-                    <li><strong>AI-пояснення помилок</strong>«Що не так → Як виправити → Приклад» на людській мові. Вбудований AI-чат.</li>
-                    <li><strong>Ordered PDF Labels</strong>Один файл. Правильний порядок. 1 клік.</li>
-                    <li><strong>Async Retry для партнерів</strong>Автоматичний повтор у фоні — клієнт не бачить збоїв.</li>
-                </ul>
+        <h2 class="section-title">Ключові проблеми імпорту <span class="hl">(Problem Statements)</span></h2>
+
+        <!-- AS IS OVERVIEW -->
+        <div class="as-is-box">
+            <h3>❌ Поточний стан (AS IS): Чому 86% спроб завершуються невдачею</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:16px;font-size:0.9rem;color:#444;">
+                <div><strong>• 90+ колонок без фільтрації:</strong> зайві митні та фінансові поля для простих внутрішніх відправок.</div>
+                <div><strong>• Жорстка валідація:</strong> блокування всього файлу через випадковий пробіл або суцільну адресу.</div>
+                <div><strong>• Технічний сленг:</strong> помилки «float», «parcel_0» замість зрозумілих інструкцій.</div>
+                <div><strong>• Хаос з маркуваннями:</strong> 7 ручних кроків та сторонні сайти для склеювання PDF.</div>
             </div>
         </div>
-    </div>
-</section>
 
-<!-- 5 PROBLEM STATEMENTS -->
-<section class="section" style="background:#fff;">
-    <div class="container">
-        <h2 class="section-title">5 Problem Statements</h2>
         <div class="ps-grid">
 
-            <!-- PS1 -->
+            <!-- Problem 1 -->
             <div class="ps-card">
                 <div class="ps-body">
                     <div class="ps-num">1</div>
-                    <div class="ps-title">Динамічний UI та шаблонізація габаритів</div>
-                    B2B-відправники стикаються з перевантаженим інтерфейсом на 90+ колонок та критичним бар'єром ручного заповнення розмірів кожної коробки.
-                    <div class="ps-quote">«Для звичайних відправок по Європі все ок, але навіщо показувати поля COD клієнту без фінансового договору? Це просто зайве.»<cite>— Микита, менеджер Литва/Латвія (глибинне інтерв'ю)</cite></div>
+                    <div class="ps-title">Проблема: Перевантажений інтерфейс і 85% помилок через обов'язкове ручне заповнення габаритів</div>
+                    B2B-відправники змушені орієнтуватися у шаблоні на 90+ колонок та окремо заповнювати три поля (Д×Ш×В) на кожне відправлення за повної відсутності стандартних типорозмірів.
+                    <div class="ps-quote">«Для звичайних відправок по Європі все ок, але навіщо показувати поля COD клієнту без фінансового договору? Це просто зайве, що заплутує.»<cite>— Микита, менеджер Литва/Латвія (глибинне інтерв'ю)</cite></div>
                     <div class="ps-quote">«Я взяла готовий файл для України — там були інвойсні поля. Мусила їх вичищати вручну, бо для Іспанії вони не потрібні.»<cite>— Людмила, менеджер Іспанія (глибинне інтерв'ю)</cite></div>
-                    <div class="ps-statement">Необхідність щоразу вручну заповнювати Д×Ш×В за відсутності типорозмірів (S/M/L) генерує <strong>85% (153 036) усіх помилок</strong> у системі та блокує завантаження файлів.</div>
+                    <div class="ps-statement">Ручне заповнення габаритів є причиною <strong>85.01% (153 036) усіх помилок</strong> у системі, блокуючи завантаження навіть базових файлів.</div>
                 </div>
                 <div class="ps-stats">
                     <div class="ps-row"><div class="bnum">153 036</div><div class="bpct">85.01% усіх помилок</div><div class="ps-sub">Відсутні або некоректні габарити Д×Ш×В</div></div>
                     <div class="ps-row"><div class="bnum">151 393</div><div class="ps-sub">Випадків — поля габаритів просто порожні</div></div>
-                    <div class="ps-row"><div class="ps-sub">90+ колонок у шаблоні, з яких ~70% нерелевантні для більшості відправок</div></div>
+                    <div class="ps-row"><div class="ps-sub">90+ колонок у шаблоні, з яких ~70% нерелевантні для більшості замовлень</div></div>
                 </div>
             </div>
 
-            <!-- PS2 -->
+            <!-- Problem 2 -->
             <div class="ps-card">
                 <div class="ps-body">
                     <div class="ps-num">2</div>
-                    <div class="ps-title">Smart Pre-Validation & Авто-нормалізація</div>
-                    Клієнти стикаються з відхиленням коректних за суттю файлів через жорстку валідацію без нормалізації — невідповідність ваги, некоректні HS-коди, відхилені телефони та адреси одним рядком.
+                    <div class="ps-title">Проблема: Відхилення коректних файлів через відсутність авто-нормалізації (телефони, вага, адреси)</div>
+                    Система жорстко блокує файли через формальні розбіжності, які легко коригуються автоматично: мікророзбіжності у вазі інвойсу, відсутність «+» у номерах телефонів та запис адреси одним суцільним рядком.
                     <div class="ps-quote">«Клієнт дав адресу одним рядком. Я розбивала формулами Excel. Потім з'ясувалося — номери квартир загубилися, і GLS повернув усі посилки.»<cite>— Людмила, менеджер Іспанія (глибинне інтерв'ю)</cite></div>
                     <div class="ps-quote">«У мене 20 відправлень по 7 позицій інвойсу. Вага роз'їхалася — купа помилок. Для клієнта заповнити таке — нереально.»<cite>— Микита, менеджер Литва/Латвія (глибинне інтерв'ю)</cite></div>
-                    <div class="ps-statement">Відсутність авто-нормалізації призводить до <strong>11 374 необґрунтованих блокувань</strong> файлів на місяць.</div>
+                    <div class="ps-statement">Відсутність попередньої нормалізації спричиняє <strong>11 374 необґрунтованих збої</strong> завантаження на місяць.</div>
                 </div>
                 <div class="ps-stats">
-                    <div class="ps-row"><div class="bnum">11 374</div><div class="bpct">6.32% усіх помилок</div><div class="ps-sub">Блокування через відсутність нормалізації</div></div>
-                    <div class="ps-row"><div class="ps-sub" style="line-height:1.9;">📦 Вага інвойсу — 4 935<br>🔢 HS-коди — 3 019<br>📞 Телефони — 1 822<br>🏠 Адреси — 1 598</div></div>
+                    <div class="ps-row"><div class="bnum">11 374</div><div class="bpct">6.32% усіх помилок</div><div class="ps-sub">Блокування через ненормалізовані дані</div></div>
+                    <div class="ps-row"><div class="ps-sub" style="line-height:1.9;">📦 Вага інвойсу — 4 935<br>🔢 HS-коди — 3 019<br>📞 Формати телефонів — 1 822<br>🏠 Суцільні адреси — 1 598</div></div>
                 </div>
             </div>
 
-            <!-- PS3 -->
+            <!-- Problem 3 -->
             <div class="ps-card">
                 <div class="ps-body">
                     <div class="ps-num">3</div>
-                    <div class="ps-title">AI-асистент та «людські» пояснення помилок</div>
-                    За 2,5 місяці зафіксовано понад 180 000 помилок — усі з технічними нелокалізованими повідомленнями. Користувачам критично потрібен зручний інструмент, щоб розуміти причини виникнення помилок та самостійно їх виправляти.
+                    <div class="ps-title">Проблема: Незрозумілі технічні тексти помилок для клієнтів та низька конверсія створення (14%)</div>
+                    Усі 180 000+ звітів про помилки формуються мовою бекенд-розробників. Клієнти не розуміють, що саме пішло не так, тому 86% сесій завершуються відмовою від створення відправлень.
                     <div class="ps-quote">«Видає купу помилок. Що я роблю не так?» — писав менеджер у Литві аналітикам. Копіював логи в Gemini, щоб розшифрувати.<cite>— Микита, менеджер Литва/Латвія</cite></div>
                     <div class="ps-quote">«Я не розумію, що мені тут робити» — писали менеджери з Франції продуктовій команді, не маючи змоги розшифрувати технічні звіти системи.<cite>— Команда Франція (звернення до Product Team)</cite></div>
-                    <div class="ps-statement">Через відсутність зручного інструменту <strong>86% клієнтів кидають процес імпорту</strong> — навіть локальні команди Франції та Литви звертались по допомогу до продакт-менеджерів.</div>
+                    <div class="ps-statement">Через технічний сленг та відсутність інструменту підказок <strong>лише 14% файлів доходять до успішного створення</strong>.</div>
                 </div>
                 <div class="ps-stats">
-                    <div class="ps-row"><div class="bnum">180 011</div><div class="bpct">100% — технічні коди</div><div class="ps-sub">Кожна помилка нечитабельна для клієнта</div></div>
-                    <div class="ps-row"><div class="bnum">14%</div><div class="ps-sub">Конверсія в успішне створення посилки</div></div>
-                    <div class="ps-row"><div class="ps-sub">«Число з плаваючою комою» — 21 342 випадки одного лише некоректного тексту помилки</div></div>
+                    <div class="ps-row"><div class="bnum">180 011</div><div class="bpct">100% — технічні коди</div><div class="ps-sub">Кожна помилка незрозуміла для користувача</div></div>
+                    <div class="ps-row"><div class="bnum">14%</div><div class="ps-sub">Поточна конверсія успішного імпорту</div></div>
+                    <div class="ps-row"><div class="ps-sub">«Число з плаваючою комою» — 21 342 випадки одного лише системного тексту</div></div>
                 </div>
             </div>
 
-            <!-- PS4 -->
+            <!-- Problem 4 -->
             <div class="ps-card">
                 <div class="ps-body">
                     <div class="ps-num">4</div>
-                    <div class="ps-title">Відмовостійкість та асинхронна робота з партнерами</div>
-                    При завантаженні великих партій система здійснює синхронні запити до API партнерів (DPD, DHL) без контролю рейт-лімітів, перекладаючи технічні збої на клієнта.
+                    <div class="ps-title">Проблема: Перекладання технічних збоїв партнерських API (DPD, DHL) на бізнес-клієнта</div>
+                    При синхронних зверненнях до зовнішніх служб доставки система видає сирі внутрішні помилки серверів партнерів просто у вікно клієнта, зупиняючи оформлення вже готової партії.
                     <div class="ps-quote">Клієнт отримує на екрані: <code style="font-size:.78rem;background:#2d0003;padding:2px 6px;border-radius:4px;">{"DPDDEShipmentClient":"dpd.shipment_service.inner_rate_limiter"}</code> — при повністю правильному файлі.<cite>— Реальний кейс з логів (424 зафіксовані випадки)</cite></div>
-                    <div class="ps-statement"><strong>Майже 2 000 технічних збоїв партнерів</strong> на місяць повністю зупиняють масове оформлення замовлень — навіть коли файл заповнений абсолютно коректно.</div>
+                    <div class="ps-statement"><strong>Майже 2 000 технічних API-збоїв</strong> партнерів на місяць блокують роботу клієнтів із бездоганно заповненими даними.</div>
                 </div>
                 <div class="ps-stats">
                     <div class="ps-row"><div class="bnum">1 942</div><div class="bpct">1.08% усіх помилок</div><div class="ps-sub">Зовнішні API-збої партнерів доставки</div></div>
@@ -285,24 +248,24 @@
                 </div>
             </div>
 
-            <!-- PS5 -->
+            <!-- Problem 5 -->
             <div class="ps-card">
                 <div class="ps-body">
                     <div class="ps-num">5</div>
-                    <div class="ps-title">Автоматизація генерації маркувань (Ordered PDF Labels)</div>
-                    За 2 місяці клієнти створили через механізм <strong>14 000 посилок</strong> (у середньому по 25 за одне завантаження), проте неможливість розуміти, де яка лейба, та отримувати їх у правильному порядку робить інструмент вкрай незручним для щоденного використання.
-                    <div class="ps-quote">«Якщо відправляти 300 посилок — повертається 20 пакетів по 15 штук. Ноутбук підвисає на 2 хвилини, а порядок переплутаний. Без макросу оператори на складі просто вмирали б.»<cite>— Микита, менеджер Литва/Латвія (демонстрація екрана)</cite></div>
-                    <p style="font-size:.88rem;color:#555;margin:8px 0 4px;">Реальний процес отримання лейб зараз (7 кроків):</p>
+                    <div class="ps-title">Проблема: Хаотичний порядок PDF-маркувань та складний 7-кроковий процес підготовки до друку</div>
+                    При створенні 14 000 посилок за 2 місяці система видає розрізнені файли без збереження черговості рядків, змушуючи клієнтів використовувати сторонні скрипти та сервіси склеювання.
+                    <div class="ps-quote">«Якщо відправляти 300 посилок — повертається 20 пакетів по 15 штук. Ноутбук підвисає на 2 хвилини, а порядок переплутаний. Без макросу оператори вмирали б.»<cite>— Микита, менеджер Литва/Латвія (демонстрація екрана)</cite></div>
+                    <p style="font-size:.88rem;color:#555;margin:8px 0 4px;">Реальний процес отримання маркувань зараз (7 кроків):</p>
                     <ol style="font-size:.84rem;color:#444;line-height:2;padding-left:20px;margin:0 0 12px;">
-                        <li>Експорт звіту з кабінету</li><li>Ручне очищення колонок</li><li>Вирівнювання порядку через <strong>Gemini</strong></li><li>Запуск самописного <strong>Excel VBA-макросу</strong></li><li>Поштучне завантаження PDF на робочий стіл</li><li>Склеювання на сторонньому сайті <strong>Tool24</strong></li><li>Передача клієнту</li>
+                        <li>Експорт звіту з кабінету</li><li>Очищення колонок в Excel</li><li>Вирівнювання порядку через <strong>Gemini</strong></li><li>Запуск <strong>VBA-макросу</strong></li><li>Поштучне скачування сотень PDF</li><li>Склеювання на сайті <strong>Tool24</strong></li><li>Передача на склад</li>
                     </ol>
-                    <div class="ps-statement">Пакетне завантаження у хаотичному порядку змушує клієнтів вдаватись до сторонніх макросів і сервісів, створює ризик пересорту при наклеюванні та затримує відвантаження партій на 30–40 хв.</div>
+                    <div class="ps-statement">Невпорядковані файли забирають до 40 хвилин на партію та несуть критичний ризик пересорту при наклеюванні на коробки.</div>
                 </div>
                 <div class="ps-stats">
-                    <div class="ps-row"><div class="bnum">14 000</div><div class="ps-sub">Посилок через механізм за 2 місяці</div></div>
-                    <div class="ps-row"><div class="bnum">~25</div><div class="ps-sub">Посилок за одну сесію (середнє)</div></div>
-                    <div class="ps-row"><div class="bnum">7</div><div class="ps-sub">Ручних кроків замість 1 кліку</div></div>
-                    <div class="ps-row"><div class="ps-sub">30–40 хвилин на партію — час ручного маркування на складі</div></div>
+                    <div class="ps-row"><div class="bnum">14 000</div><div class="ps-sub">Посилок оформлено за 2 місяці</div></div>
+                    <div class="ps-row"><div class="bnum">~25</div><div class="ps-sub">Посилок за одну партію (середнє)</div></div>
+                    <div class="ps-row"><div class="bnum">7</div><div class="ps-sub">Ручних операцій замість 1 кнопки</div></div>
+                    <div class="ps-row"><div class="ps-sub">30–40 хвилин втраченого часу на кожну відвантажену партію</div></div>
                 </div>
             </div>
 
@@ -311,24 +274,24 @@
 </section>
 
 <!-- JTBD -->
-<section class="section gray-bg">
+<section class="section" style="background:#fff;">
     <div class="container">
         <h2 class="section-title">🎯 Jobs To Be Done</h2>
         <div class="jtbd-grid">
-            <div class="jtbd-card"><div class="jtbd-icon">📤</div><h3 class="jtbd-title">Завантажити файл без помилок з першого разу</h3><p class="jtbd-text">Я хочу, щоб система прийняла мій файл без блокування, навіть якщо телефон з пробілом або адреса одним рядком.</p></div>
-            <div class="jtbd-card"><div class="jtbd-icon">🤖</div><h3 class="jtbd-title">Зрозуміти помилку і виправити самостійно</h3><p class="jtbd-text">Якщо помилка є, я хочу просту підказку людською мовою — без дзвінка менеджеру.</p></div>
-            <div class="jtbd-card"><div class="jtbd-icon">📦</div><h3 class="jtbd-title">Обрати розмір коробки в один клік</h3><p class="jtbd-text">Я використовую стандартні коробки. Хочу обрати «Коробка M» і не заповнювати три окремі поля Д×Ш×В.</p></div>
-            <div class="jtbd-card"><div class="jtbd-icon">🏷️</div><h3 class="jtbd-title">Отримати лейби у правильному порядку</h3><p class="jtbd-text">Один PDF — лейба №1 відповідає рядку 1 мого файлу. Без сторонніх інструментів.</p></div>
-            <div class="jtbd-card"><div class="jtbd-icon">🔄</div><h3 class="jtbd-title">Не перезапускати через збій партнера</h3><p class="jtbd-text">Якщо DPD недоступний, хочу щоб система повторила запит сама — а не показувала JSON-помилку.</p></div>
-            <div class="jtbd-card"><div class="jtbd-icon">🗺️</div><h3 class="jtbd-title">Вставити адресу одним рядком</h3><p class="jtbd-text">Клієнти дають адресу «вул. Франка, 15б, кв. 4». Хочу вставити це одним полем — система розбере сама.</p></div>
+            <div class="jtbd-card"><div class="jtbd-icon">📤</div><h3 class="jtbd-title">Завантажити файл без помилок з першого разу</h3><p class="jtbd-text">Я хочу, щоб система прийняла мій файл без блокування, навіть якщо телефон внесено з пробілом або адресу одним рядком.</p></div>
+            <div class="jtbd-card"><div class="jtbd-icon">🤖</div><h3 class="jtbd-title">Зрозуміти помилку і виправити самостійно</h3><p class="jtbd-text">Якщо у файлі є неточність, я хочу отримати зрозумілу підказку людською мовою без потреби телефонувати менеджеру.</p></div>
+            <div class="jtbd-card"><div class="jtbd-icon">📦</div><h3 class="jtbd-title">Обрати розмір посилки в один клік</h3><p class="jtbd-text">Я використовую стандартні розміри. Хочу обрати «Посилка M» і не заповнювати три окремі поля Д×Ш×В для кожного відправлення.</p></div>
+            <div class="jtbd-card"><div class="jtbd-icon">🏷️</div><h3 class="jtbd-title">Отримати маркування у правильному порядку</h3><p class="jtbd-text">Один PDF — де лейба №1 чітко відповідає рядку 1 мого файлу, щоб оператор на складі відразу йшов маркувати партію.</p></div>
+            <div class="jtbd-card"><div class="jtbd-icon">🔄</div><h3 class="jtbd-title">Не перезапускати процес через збій партнера</h3><p class="jtbd-text">Якщо DPD тимчасово недоступний, система має повторити запит у фоні, а я маю побачити успішний результат, а не технічний код.</p></div>
+            <div class="jtbd-card"><div class="jtbd-icon">🗺️</div><h3 class="jtbd-title">Вставити адресу одним рядком</h3><p class="jtbd-text">Клієнти дають адресу «вул. Франка, 15б, кв. 4». Я хочу вставити її в одне поле, а система має розібрати компоненти самостійно.</p></div>
         </div>
     </div>
 </section>
 
 <!-- BENCHMARKS -->
-<section class="section" style="background:#fff;">
+<section class="section gray-bg">
     <div class="container">
-        <h2 class="section-title">Конкурентний аналіз:<br><span class="hl">Як це роблять інші</span></h2>
+        <h2 class="section-title">Конкурентний аналіз:<br><span class="hl">Як це реалізовано на ринку</span></h2>
 
         <!-- GLS -->
         <div class="bench-group">
@@ -342,7 +305,7 @@
                     <div class="screen-cap">
                         <span class="stag tag-ok">✅ Успіх</span>
                         <strong>Import successfully processed</strong>
-                        Зелений статус після завантаження. Чисто, без зайвих деталей. Жодних технічних кодів — лише підтвердження.
+                        Зрозумілий статус підтвердження успішного завантаження. Жодних зайвих технічних параметрів.
                     </div>
                 </div>
                 <div class="screen-item" onclick="openLb('benchmark_gls_error.png')">
@@ -350,7 +313,7 @@
                     <div class="screen-cap">
                         <span class="stag tag-bad">❌ Помилка</span>
                         <strong>Import error: items are missing</strong>
-                        GLS чітко вказує рядок і поле: «Line 2: Street of the beneficiary», «Line 3: Surname». Точно і зрозуміло — жодних технічних кодів.
+                        GLS вказує точний номер рядка та пропущене поле: «Line 2: Street», «Line 3: Surname».
                     </div>
                 </div>
                 <div class="screen-item" onclick="openLb('benchmark_gls_summary.png')">
@@ -358,7 +321,7 @@
                     <div class="screen-cap">
                         <span class="stag tag-neu">💡 Пресети</span>
                         <strong>Parcel dimensions: S-Pack / L-Pack</strong>
-                        GLS пропонує типорозміри (S-Pack 5×10×20 cm, L-Pack up to 20 kg) — одним значенням замість 3 окремих колонок Д×Ш×В.
+                        Вибір стандартного типорозміру (S-Pack 5×10×20 см, L-Pack до 20 кг) одним значенням замість трьох колонок.
                     </div>
                 </div>
             </div>
@@ -376,7 +339,7 @@
                     <div class="screen-cap">
                         <span class="stag tag-neu">📁 Upload</span>
                         <strong>Import parcels file</strong>
-                        Простий екран завантаження з чітким блоком інструкцій: дозволені формати (CSV, XML, XLS, XLSX, ODT) та вимога кодування UTF-8.
+                        Лаконічний блок правил: список підтримуваних форматів (CSV, XML, XLS, XLSX, ODT) та кодування UTF-8.
                     </div>
                 </div>
                 <div class="screen-item" onclick="openLb('benchmark_zasilkovna_template.png')">
@@ -384,7 +347,7 @@
                     <div class="screen-cap">
                         <span class="stag tag-ok">✅ Шаблон</span>
                         <strong>Template selector — dropdown</strong>
-                        Після вибору файлу — dropdown для вибору шаблону. Клієнт вказує свій формат колонок, а система адаптується під нього.
+                        Можливість обрати шаблон імпорту, що дозволяє системі гнучко адаптуватися під формат файлу клієнта.
                     </div>
                 </div>
                 <div class="screen-item" onclick="openLb('benchmark_zasilkovna_edit.png')">
@@ -392,15 +355,15 @@
                     <div class="screen-cap">
                         <span class="stag tag-bad">❌ Виправлення</span>
                         <strong>Editing of unfinished parcels</strong>
-                        При помилці — форма з виділеними червоним проблемними полями. Текст помилки конкретний: «The assigned tracking number is outside the range». Навіть тут видно Scientific Notation у телефоні (4,20123E+11).
+                        Форма з виділенням конкретних помилкових полів червоним та точним описом проблеми.
                     </div>
                 </div>
                 <div class="screen-item" onclick="openLb('benchmark_zasilkovna_unfinished.png')">
                     <img src="benchmark_zasilkovna_unfinished.png" alt="Zásilkovna Unfinished">
                     <div class="screen-cap">
                         <span class="stag tag-neu">📋 Список</span>
-                        <strong>Unfinished plots — всі помилкові рядки</strong>
-                        Окрема сторінка з незавершеними посилками. Червоним виділено помилкові рядки. Масові дії через «Group actions: Execute».
+                        <strong>Unfinished plots — реєстр незавершених</strong>
+                        Окремий екран з таблицею проблемних записів та можливістю масових групових дій.
                     </div>
                 </div>
             </div>
@@ -410,9 +373,56 @@
         <div style="background:#1a1a1a;color:#fff;border-radius:16px;padding:36px;">
             <h3 style="margin:0 0 24px;font-size:1.1rem;text-transform:uppercase;letter-spacing:1px;">💡 Ключові інсайти бенчмарку</h3>
             <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-                <div><div style="color:var(--np-red);font-weight:800;margin-bottom:8px;">GLS: читаємо</div><p style="font-size:.85rem;color:#ccc;margin:0;">Помилки прив'язані до рядку та поля («Line 2: Street»). Пресети S/L-Pack замінюють 3 колонки габаритів одним значенням.</p></div>
-                <div><div style="color:var(--np-red);font-weight:800;margin-bottom:8px;">Zásilkovna: адаптивність</div><p style="font-size:.85rem;color:#ccc;margin:0;">Вибір шаблону під формат клієнта. Окрема сторінка для виправлення помилок. Прямий перехід до редагування проблемного рядка.</p></div>
-                <div><div style="color:var(--np-red);font-weight:800;margin-bottom:8px;">Nova Post: наш потенціал</div><p style="font-size:.85rem;color:#ccc;margin:0;">Обидва конкуренти не мають AI-асистента, авто-нормалізації адрес та авто-розрахунку ваги. Ми можемо стати першими на ринку з цим рішенням.</p></div>
+                <div><div style="color:var(--np-red);font-weight:800;margin-bottom:8px;">GLS: чіткість і простота</div><p style="font-size:.85rem;color:#ccc;margin:0;">Помилки прив'язані до конкретного рядка. Пресети типорозмірів замінюють обов'язкове заповнення трьох полів габаритів.</p></div>
+                <div><div style="color:var(--np-red);font-weight:800;margin-bottom:8px;">Zásilkovna: гнучкість</div><p style="font-size:.85rem;color:#ccc;margin:0;">Вибір структури шаблону під клієнта. Зручний інтерфейс для доопрацювання помилкових рядків без повторного імпорту.</p></div>
+                <div><div style="color:var(--np-red);font-weight:800;margin-bottom:8px;">Nova Post: наша перевага</div><p style="font-size:.85rem;color:#ccc;margin:0;">Жоден конкурент не має вбудованого AI-асистента, автопарсингу адрес та авто-нормалізації ваги. Це шанс стати стандартом ринку.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TO BE SECTION (NOW LOCATED AFTER BENCHMARKS) -->
+<section id="solution" class="section" style="background:#fff;">
+    <div class="container">
+        <h2 class="section-title">Цільовий стан системи <span class="hl">(TO BE)</span></h2>
+        <div class="tobe-container">
+            <div style="text-align:center;max-width:700px;margin:0 auto;">
+                <span class="badge">Рішення та архітектура змін</span>
+                <h3 style="font-size:1.6rem;font-weight:800;margin:10px 0 14px;">Як працюватиме Масове створення 2.0</h3>
+                <p style="font-size:.95rem;color:#666;">Повна автоматизація рутинних операцій, усунення бар'єрів валідації та наскрізна підтримка клієнта на кожному кроці.</p>
+            </div>
+
+            <div class="tobe-grid">
+                <div class="tobe-card">
+                    <div class="icon">🎛️</div>
+                    <h4>Динамічний UI + Пресети розмірів</h4>
+                    <p>Показ лише релевантних полів залежно від країни та послуги. Вибір стандартного розміру посилки (XS/S/M/L/XL) в один клік замість 3 колонок.</p>
+                </div>
+                <div class="tobe-card">
+                    <div class="icon">⚡</div>
+                    <h4>Smart Pre-Validation & Нормалізація</h4>
+                    <p>Автоматичне виправлення форматів телефонів, округлення ваги інвойсу, розпізнавання адрес з одного рядка до запуску валідації.</p>
+                </div>
+                <div class="tobe-card">
+                    <div class="icon">🤖</div>
+                    <h4>AI-асистент та «людські» підказки</h4>
+                    <p>Заміна технічного сленгу на зрозумілий формат: «Що не так → Як виправити → Приклад». Інтегрований AI-помічник для вирішення питань на місці.</p>
+                </div>
+                <div class="tobe-card">
+                    <div class="icon">🏷️</div>
+                    <h4>Ordered PDF Labels в 1 клік</h4>
+                    <p>Генерація єдиного PDF-файлу з маркуваннями, де порядок аркушів суворо відповідає черговості рядків у завантаженому файлі.</p>
+                </div>
+                <div class="tobe-card">
+                    <div class="icon">🛡️</div>
+                    <h4>Асинхронний Retry для партнерів</h4>
+                    <p>Фонова повторна відправка запитів до API партнерів (DPD, DHL) при таймаутах. Клієнт бачить фінальний результат, а не збій сервера.</p>
+                </div>
+                <div class="tobe-card">
+                    <div class="icon">📊</div>
+                    <h4>Зручне доопрацювання помилок</h4>
+                    <p>Редагування лише проблемних рядків прямо в інтерфейсі кабінету без необхідності переробляти та перезавантажувати весь файл.</p>
+                </div>
             </div>
         </div>
     </div>
