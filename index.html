@@ -8,11 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --np-red: #e31e24; --dark: #1a1a1a; --gray: #f8f9fa; }
+        :root {
+            --np-red: #e31e24;
+            --dark: #1a1a1a;
+            --gray: #f8f9fa;
+        }
         * { box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; margin: 0; color: var(--dark); line-height: 1.6; overflow-x: hidden; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        .section { padding: 60px 0; }
+        .section { padding: 64px 0; }
         .gray-bg { background: var(--gray); }
         .section-title { font-size: 2rem; font-weight: 800; text-align: center; margin: 0 0 48px; text-transform: uppercase; letter-spacing: -0.5px; }
         .section-title .hl { color: var(--np-red); }
@@ -87,35 +91,121 @@
         .tag-neu { background:#f0f0f0; color:#555; }
         .bench-zasilkovna { grid-template-columns:repeat(4,1fr); }
 
-        /* TO BE Targeted Solution Section */
-        .tobe-container { background:linear-gradient(135deg,#ffffff 0%,#fff5f5 100%); border:2px solid #f5c0c2; border-top:8px solid var(--np-red); border-radius:20px; padding:44px; box-shadow:0 12px 40px rgba(227,30,36,.08); }
-        .tobe-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:28px; }
-        .tobe-card { background:#fff; border-radius:14px; padding:24px; border:1px solid #fedcdc; box-shadow:0 4px 14px rgba(0,0,0,.04); }
-        .tobe-card .icon { font-size:1.8rem; margin-bottom:10px; }
-        .tobe-card h4 { font-size:1rem; font-weight:800; margin:0 0 8px; color:var(--dark); }
-        .tobe-card p { font-size:.88rem; color:#555; margin:0; line-height:1.6; }
+        /* ── TO BE SOLUTIONS REDESIGNED (Connected to Problems) ── */
+        .solutions-container { display: flex; flex-direction: column; gap: 36px; margin-top: 32px; }
+        .solution-item-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 36px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            border: 1.5px solid #eaeaea;
+            border-left: 6px solid var(--np-red);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+            align-items: center;
+        }
+        .solution-item-card.no-image {
+            grid-template-columns: 1fr 340px;
+        }
+        .sol-problem-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        .sol-heading { font-size: 1.3rem; font-weight: 800; margin: 0 0 14px; line-height: 1.3; color: var(--dark); }
+        .sol-body { font-size: 0.92rem; color: #444; line-height: 1.65; margin-bottom: 18px; }
+        .sol-features { list-style: none; padding: 0; margin: 0; }
+        .sol-features li { padding: 6px 0 6px 24px; position: relative; font-size: 0.88rem; color: #555; }
+        .sol-features li::before { content: "✓"; position: absolute; left: 0; color: #16a34a; font-weight: 800; }
+        
+        .sol-visual-wrap {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            position: relative;
+            cursor: zoom-in;
+            border: 1px solid #e5e5e5;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .sol-visual-wrap:hover {
+            transform: scale(1.02);
+            box-shadow: 0 14px 36px rgba(0,0,0,0.15);
+        }
+        .sol-visual-wrap img { width: 100%; display: block; }
+        .sol-visual-badge {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.75);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-        /* Insights */
-        .insight-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:48px; }
-        .insight-card { background:#fff; border-radius:14px; padding:28px; text-align:center; box-shadow:0 4px 14px rgba(0,0,0,.07); }
-        .insight-num { font-size:2.8rem; font-weight:800; color:var(--np-red); }
-        .insight-card h4 { margin:8px 0; font-size:.95rem; }
-        .insight-card p { font-size:.85rem; color:#666; margin:0; }
+        /* Mockup / Diagram Visual Box for items without screenshot */
+        .sol-mockup-box {
+            background: linear-gradient(135deg, #1f1f1f 0%, #111111 100%);
+            border-radius: 14px;
+            padding: 28px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 220px;
+            border: 1px solid #333;
+            border-top: 4px solid var(--np-red);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+        .sol-mockup-icon { font-size: 3.2rem; margin-bottom: 14px; }
+        .sol-mockup-title { font-size: 1.05rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+        .sol-mockup-sub { font-size: 0.8rem; color: #aaa; line-height: 1.5; }
+
+        /* Business Impact Section */
+        .biz-impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .biz-impact-card { background: #fff; border: 1.5px solid #f0f0f0; border-radius: 20px; padding: 36px 28px; text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; position: relative; }
+        .biz-impact-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(227,30,36,0.1); border-color: #fca5a5; }
+        .biz-icon { font-size: 2.4rem; margin-bottom: 16px; display: inline-block; color: var(--np-red); }
+        .biz-val { font-size: 2.5rem; font-weight: 800; color: var(--np-red); line-height: 1.1; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .biz-val-sub { font-size: 1.15rem; font-weight: 700; color: #555; vertical-align: baseline; }
+        .biz-title { font-size: 1.05rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; }
+        .biz-desc { font-size: 0.88rem; color: #666; line-height: 1.6; margin: 0; }
 
         /* Quotes */
-        .quotes-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-        .quote-card { background:#fff; border-radius:14px; padding:24px; box-shadow:0 4px 14px rgba(0,0,0,.07); border-top:4px solid var(--np-red); }
-        .quote-text { font-size:.88rem; font-style:italic; color:#333; line-height:1.65; margin:0 0 16px; }
-        .user-profile { display:flex; align-items:center; gap:12px; }
-        .user-avatar { width:40px; height:40px; border-radius:50%; object-fit:cover; }
-        .user-info h5 { margin:0; font-size:.9rem; font-weight:700; }
-        .user-info span { font-size:.78rem; color:#777; display:flex; align-items:center; gap:4px; }
-        .flag { width:16px; height:11px; }
+        .interview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .interview-card { background: #fff; border-radius: 18px; padding: 32px; box-shadow: 0 6px 24px rgba(0,0,0,0.06); border-top: 5px solid var(--np-red); }
+        .interview-user { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+        .interview-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--np-red); }
+        .interview-user h4 { margin: 0; font-size: 1rem; font-weight: 800; }
+        .interview-user span { font-size: 0.8rem; color: #777; display: flex; align-items: center; gap: 6px; }
+        .interview-topic { background: #fdf2f2; border-left: 3px solid var(--np-red); padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+        .interview-topic:last-child { margin-bottom: 0; }
+        .interview-topic strong { display: block; font-size: 0.82rem; text-transform: uppercase; color: var(--np-red); margin-bottom: 4px; letter-spacing: 0.5px; }
+        .interview-topic p { margin: 0; font-size: 0.88rem; font-style: italic; color: #333; line-height: 1.6; }
+        .flag { width: 18px; height: 12px; border-radius: 2px; }
 
         /* Accordion */
-        .accordion { border-radius:12px; overflow:hidden; border:1px solid #e5e5e5; }
-        .acc-item { border-bottom:1px solid #e5e5e5; }
-        .acc-item:last-child { border-bottom:none; }
+        .accordion { border-radius: 12px; overflow:hidden; border: 1px solid #e5e5e5; }
+        .acc-item { border-bottom: 1px solid #e5e5e5; }
+        .acc-item:last-child { border-bottom: none; }
         .acc-header { width:100%; background:#fff; border:none; padding:18px 24px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-family:inherit; font-size:.95rem; font-weight:600; text-align:left; transition:background .15s; }
         .acc-header:hover { background:#fafafa; }
         .acc-item.open .acc-header { background:#fff8f8; color:var(--np-red); }
@@ -129,14 +219,153 @@
         .accordion-dark .acc-item.open .acc-header { background:#2d0003; color:#f5a0a2; }
         .accordion-dark .acc-content { background:#111; color:#ccc; }
 
-        /* Lightbox */
-        .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:9999; align-items:center; justify-content:center; }
-        .lightbox.active { display:flex; }
-        .lightbox img { max-width:90vw; max-height:90vh; border-radius:8px; }
-        .lb-close { position:absolute; top:20px; right:28px; color:#fff; font-size:2.5rem; cursor:pointer; line-height:1; }
+        /* ── INTERACTIVE SOLUTION LIGHTBOX WITH ZOOM & PAN ── */
+        .solution-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 20000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .solution-lightbox.active { opacity: 1; visibility: visible; }
+        .solution-lightbox-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 10, 10, 0.93);
+            cursor: zoom-out;
+        }
+        .solution-lightbox-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100vw;
+            height: 100vh;
+            padding: 60px 16px 80px;
+            box-sizing: border-box;
+            justify-content: center;
+        }
+        .slb-img-wrap {
+            flex: 1 1 auto;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            height: 100%;
+        }
+        .slb-img-wrap img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            transition: opacity 0.15s ease, transform 0.1s ease;
+            display: block;
+            transform-origin: center center;
+            user-select: none;
+        }
+        .slb-nav {
+            background: rgba(255,255,255,0.12);
+            border: 2px solid rgba(255,255,255,0.25);
+            color: white;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            font-size: 2rem;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, transform 0.2s;
+            flex-shrink: 0;
+            padding: 0;
+        }
+        .slb-nav:hover { background: var(--np-red); border-color: var(--np-red); transform: scale(1.1); }
+        .slb-zoom-controls {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 4px;
+            z-index: 3;
+            background: rgba(30, 30, 30, 0.85);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 10px;
+            padding: 4px;
+            backdrop-filter: blur(8px);
+        }
+        .slb-zoom-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            width: 38px;
+            height: 38px;
+            border-radius: 7px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            font-family: inherit;
+            padding: 0;
+        }
+        .slb-zoom-btn:hover { background: var(--np-red); border-color: var(--np-red); }
+        .slb-zoom-reset { font-size: 0.82rem; width: auto; padding: 0 10px; }
+        .slb-close-btn {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            background: rgba(30, 30, 30, 0.85);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            transition: background 0.2s;
+        }
+        .slb-close-btn:hover { background: var(--np-red); }
+        .slb-dots {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 3;
+            background: rgba(30, 30, 30, 0.85);
+            padding: 8px 14px;
+            border-radius: 20px;
+        }
+        .slb-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.2s;
+        }
+        .slb-dot.active { background: var(--np-red); transform: scale(1.3); }
 
         @media(max-width:900px){
-            .ps-card,.jtbd-grid,.quotes-grid,.insight-grid,.tobe-grid { grid-template-columns:1fr; }
+            .ps-card,.jtbd-grid,.biz-impact-grid,.interview-grid,.solution-item-card,.solution-item-card.no-image { grid-template-columns:1fr; }
             .bench-screens,.bench-zasilkovna,.as-is-cards-grid { grid-template-columns:1fr 1fr; }
             .hero h1 { font-size:2.4rem; }
             .vision-card { grid-template-columns:1fr; text-align:center; }
@@ -195,13 +424,13 @@
                 </div>
                 <div class="as-is-card">
                     <div class="as-is-icon">⚠️</div>
-                    <div class="as-is-card-title">Технічний сленг</div>
-                    <div class="as-is-card-text">Системні тексти помилок на кшталт «float» та «parcel_0» замість зрозумілих людських інструкцій.</div>
+                    <div class="as-is-card-title">Складні в виправленні помилки</div>
+                    <div class="as-is-card-text">Важко зрозуміти де помилка і яке саме значення очікує система.</div>
                 </div>
                 <div class="as-is-card">
                     <div class="as-is-icon">🔀</div>
-                    <div class="as-is-card-title">Хаос з маркуваннями</div>
-                    <div class="as-is-card-text">Маркування працює в випадковому порядку, що унеможливлює швидку поклейку без сторонніх сервісів.</div>
+                    <div class="as-is-card-title">Випадковий порядок друку маркування</div>
+                    <div class="as-is-card-text">Отримане маркування не співпадає з порядком створення, що унеможливлює швидку поклейку без сторонніх сервісів.</div>
                 </div>
             </div>
         </div>
@@ -254,7 +483,7 @@
                     <div class="ps-statement">Через технічний сленг та відсутність інструменту підказок <strong>лише 14% файлів доходять до успішного створення</strong>.</div>
                 </div>
                 <div class="ps-stats">
-                    <div class="ps-row"><div class="bnum">180 011</div><div class="bpct">100% — технічні коди</div><div class="ps-sub">Кожна помилка незрозуміла для користувача</div></div>
+                    <div class="ps-row"><div class="bnum">180 011</div><div class="ps-sub">Помилок за 2,5 місяці</div></div>
                     <div class="ps-row"><div class="bnum">14%</div><div class="ps-sub">Поточна конверсія успішного імпорту</div></div>
                     <div class="ps-row"><div class="ps-sub">«Число з плаваючою комою» — 21 342 випадки одного лише системного тексту</div></div>
                 </div>
@@ -327,7 +556,7 @@
                 GLS — Масовий імпорт відправлень
             </div>
             <div class="bench-screens">
-                <div class="screen-item" onclick="openLb('benchmark_gls_success.png')">
+                <div class="screen-item" onclick="openSolutionLightbox(0)">
                     <img src="benchmark_gls_success.png" alt="GLS Success">
                     <div class="screen-cap">
                         <span class="stag tag-ok">✅ Успіх</span>
@@ -335,7 +564,7 @@
                         Зрозумілий статус підтвердження успішного завантаження. Жодних зайвих технічних параметрів.
                     </div>
                 </div>
-                <div class="screen-item" onclick="openLb('benchmark_gls_error.png')">
+                <div class="screen-item" onclick="openSolutionLightbox(1)">
                     <img src="benchmark_gls_error.png" alt="GLS Error">
                     <div class="screen-cap">
                         <span class="stag tag-bad">❌ Помилка</span>
@@ -343,7 +572,7 @@
                         GLS вказує точний номер рядка та пропущене поле: «Line 2: Street», «Line 3: Surname».
                     </div>
                 </div>
-                <div class="screen-item" onclick="openLb('benchmark_gls_summary.png')">
+                <div class="screen-item" onclick="openSolutionLightbox(2)">
                     <img src="benchmark_gls_summary.png" alt="GLS Size Presets">
                     <div class="screen-cap">
                         <span class="stag tag-neu">💡 Пресети</span>
@@ -361,7 +590,7 @@
                 Packeta Group — Масовий імпорт відправлень
             </div>
             <div class="bench-screens bench-zasilkovna">
-                <div class="screen-item" onclick="openLb('benchmark_zasilkovna_upload.png')">
+                <div class="screen-item" onclick="openSolutionLightbox(3)">
                     <img src="benchmark_zasilkovna_upload.png" alt="Packeta Upload">
                     <div class="screen-cap">
                         <span class="stag tag-neu">📁 Upload</span>
@@ -369,7 +598,7 @@
                         Лаконічний блок правил: список підтримуваних форматів (CSV, XML, XLS, XLSX, ODT) та кодування UTF-8.
                     </div>
                 </div>
-                <div class="screen-item" onclick="openLb('benchmark_zasilkovna_template.png')">
+                <div class="screen-item" onclick="openSolutionLightbox(4)">
                     <img src="benchmark_zasilkovna_template.png" alt="Packeta Template">
                     <div class="screen-cap">
                         <span class="stag tag-ok">✅ Шаблон</span>
@@ -377,7 +606,7 @@
                         Можливість обрати шаблон імпорту, що дозволяє системі гнучко адаптуватися під формат файлу клієнта.
                     </div>
                 </div>
-                <div class="screen-item" onclick="openLb('benchmark_zasilkovna_edit.png')">
+                <div class="screen-item" onclick="openSolutionLightbox(5)">
                     <img src="benchmark_zasilkovna_edit.png" alt="Packeta Edit Error">
                     <div class="screen-cap">
                         <span class="stag tag-bad">❌ Виправлення</span>
@@ -385,7 +614,7 @@
                         Форма з виділенням конкретних помилкових полів червоним та точним описом проблеми.
                     </div>
                 </div>
-                <div class="screen-item" onclick="openLb('benchmark_zasilkovna_unfinished.png')">
+                <div class="screen-item" onclick="openSolutionLightbox(6)">
                     <img src="benchmark_zasilkovna_unfinished.png" alt="Packeta Unfinished">
                     <div class="screen-cap">
                         <span class="stag tag-neu">📋 Список</span>
@@ -408,129 +637,400 @@
     </div>
 </section>
 
-<!-- TO BE SECTION -->
+<!-- TO BE SOLUTIONS REDESIGNED SECTION -->
 <section id="solution" class="section" style="background:#fff;">
     <div class="container">
-        <h2 class="section-title">Цільовий стан системи <span class="hl">(TO BE)</span></h2>
-        <div class="tobe-container">
-            <div style="text-align:center;max-width:700px;margin:0 auto;">
-                <span class="badge">Рішення та архітектура змін</span>
-                <h3 style="font-size:1.6rem;font-weight:800;margin:10px 0 14px;">Як працюватиме Масове створення 2.0</h3>
-                <p style="font-size:.95rem;color:#666;">Повна автоматизація рутинних операцій, усунення бар'єрів валідації та наскрізна підтримка клієнта на кожному кроці.</p>
+        <div style="text-align:center;max-width:750px;margin:0 auto 48px;">
+            <span class="badge">Рішення та цільова архітектура</span>
+            <h2 style="font-size:2rem;font-weight:800;text-transform:uppercase;margin:10px 0 14px;">Цільовий стан системи <span class="hl">(TO BE)</span></h2>
+            <p style="font-size:.95rem;color:#666;">Кожне рішення прямо усуває конкретну проблему імпорту та створює безшовний досвід для бізнесу.</p>
+        </div>
+
+        <div class="solutions-container">
+
+            <!-- Solution 1: Columns UI -->
+            <div class="solution-item-card">
+                <div>
+                    <span class="sol-problem-tag">🎯 Відповідь на Проблему 1</span>
+                    <h3 class="sol-heading">Налаштування колонок та вибір розміру посилки в 1 клік</h3>
+                    <div class="sol-body">
+                        Користувач сам обирає, які стовпці йому потрібні в таблиці — зайві митні та фінансові поля приховуються. Замість трьох окремих полів (довжина, ширина, висота) додано вибір стандартного типорозміру посилки (XS / S / M / L / XL).
+                    </div>
+                    <ul class="sol-features">
+                        <li><strong>Кастомізація колонок:</strong> відображаються лише релевантні поля для країни та сценарію.</li>
+                        <li><strong>Стандартні розміри посилок:</strong> вибір однією кнопкою усуває 85% помилок габаритів.</li>
+                        <li><strong>Збереження пресетів:</strong> система запам'ятовує налаштування клієнта для наступних імпортів.</li>
+                    </ul>
+                </div>
+                <div class="sol-visual-wrap" onclick="openSolutionLightbox(7)">
+                    <img src="solution_columns.png" alt="Налаштування колонок у таблиці">
+                    <div class="sol-visual-badge">🔍 Клікніть для збільшення</div>
+                </div>
             </div>
 
-            <div class="tobe-grid">
-                <div class="tobe-card">
-                    <div class="icon">🎛️</div>
-                    <h4>Динамічний UI + Пресети розмірів</h4>
-                    <p>Показ лише релевантних полів залежно від країни та послуги. Вибір стандартного розміру посилки (XS/S/M/L/XL) в один клік замість 3 колонок.</p>
+            <!-- Solution 2: Pre-Validation -->
+            <div class="solution-item-card no-image">
+                <div>
+                    <span class="sol-problem-tag">🎯 Відповідь на Проблему 2</span>
+                    <h3 class="sol-heading">Smart Pre-Validation & Авто-нормалізація даних</h3>
+                    <div class="sol-body">
+                        Інтелектуальний шар нормалізації перед передачею даних на валідацію. Система самостійно виправляє дрібні неточності, не турбуючи клієнта і не відхиляючи валідні файли.
+                    </div>
+                    <ul class="sol-features">
+                        <li><strong>Авто-нормалізація телефонів:</strong> видалення пробілів, тире, автоматичне додавання коду країни (+).</li>
+                        <li><strong>Розумний парсер адрес:</strong> розбиття суцільного рядка на вулицю, номер будинку та квартиру.</li>
+                        <li><strong>Автокорекція ваги інвойсу:</strong> вирівнювання округлень позицій до загальної ваги відправлення.</li>
+                    </ul>
                 </div>
-                <div class="tobe-card">
-                    <div class="icon">⚡</div>
-                    <h4>Smart Pre-Validation & Нормалізація</h4>
-                    <p>Автоматичне виправлення форматів телефонів, округлення ваги інвойсу, розпізнавання адрес з одного рядка до запуску валідації.</p>
+                <div class="sol-mockup-box">
+                    <div class="sol-mockup-icon">⚡</div>
+                    <div class="sol-mockup-title">Smart Pre-Validation</div>
+                    <div class="sol-mockup-sub">Автокорекція номерів, адрес та ваги на льоту перед валідацією</div>
                 </div>
-                <div class="tobe-card">
-                    <div class="icon">🤖</div>
-                    <h4>AI-асистент та «людські» підказки</h4>
-                    <p>Заміна технічного сленгу на зрозумілий формат: «Що не так → Як виправити → Приклад». Інтегрований AI-помічник для вирішення питань на місці.</p>
+            </div>
+
+            <!-- Solution 3: AI Assistant -->
+            <div class="solution-item-card">
+                <div>
+                    <span class="sol-problem-tag">🎯 Відповідь на Проблему 3</span>
+                    <h3 class="sol-heading">Вбудований AI-асистент та пояснення помилок людською мовою</h3>
+                    <div class="sol-body">
+                        Повна відмова від сирих кодів «float» та «parcel_0». Інтегрований AI-помічник аналізує файл і видає чіткі людські підказки у форматі «Що не так → Як виправити → Приклад значення» з можливістю виправлення помилки на місці.
+                    </div>
+                    <ul class="sol-features">
+                        <li><strong>Людські тексти помилок:</strong> конкретна назва поля та точний номер рядка.</li>
+                        <li><strong>Інтерактивний AI-чат:</strong> можливість задати питання помічнику прямо у кабінеті.</li>
+                        <li><strong>Редагування на льоту:</strong> виправлення проблемного рядка без повторного завантаження файлу.</li>
+                    </ul>
                 </div>
-                <div class="tobe-card">
-                    <div class="icon">🏷️</div>
-                    <h4>Ordered PDF Labels в 1 клік</h4>
-                    <p>Генерація єдиного PDF-файлу з маркуваннями, де порядок аркушів суворо відповідає черговості рядків у завантаженому файлі.</p>
+                <div class="sol-visual-wrap" onclick="openSolutionLightbox(8)">
+                    <img src="solution_ai.jpeg" alt="AI-асистент Nova Post">
+                    <div class="sol-visual-badge">🔍 Клікніть для збільшення</div>
                 </div>
-                <div class="tobe-card">
-                    <div class="icon">🛡️</div>
-                    <h4>Асинхронний Retry для партнерів</h4>
-                    <p>Фонова повторна відправка запитів до API партнерів (DPD, DHL) при таймаутах. Клієнт бачить фінальний результат, а не збій сервера.</p>
+            </div>
+
+            <!-- Solution 4: Resilience & Retry -->
+            <div class="solution-item-card no-image">
+                <div>
+                    <span class="sol-problem-tag">🎯 Відповідь на Проблему 4</span>
+                    <h3 class="sol-heading">Відмовостійкість та асинхронний Retry з партнерами</h3>
+                    <div class="sol-body">
+                        Ізоляція помилок зовнішніх служб доставки (DPD, DHL, FanCourier). Клієнт більше ніколи не бачить JSON-помилок серверів партнерів — система бере стабільність на себе.
+                    </div>
+                    <ul class="sol-features">
+                        <li><strong>Фоновий повтор (Retry):</strong> автоматичні спроби підключення при таймаутах партнера.</li>
+                        <li><strong>Часткове збереження партії:</strong> успішні посилки створюються відразу, проблемні чекають відповіді.</li>
+                        <li><strong>Прозорий статус:</strong> клієнт бачить зрозумілий статус замість збою процесу.</li>
+                    </ul>
                 </div>
-                <div class="tobe-card">
-                    <div class="icon">📊</div>
-                    <h4>Зручне доопрацювання помилок</h4>
-                    <p>Редагування лише проблемних рядків прямо в інтерфейсі кабінету без необхідності переробляти та перезавантажувати весь файл.</p>
+                <div class="sol-mockup-box">
+                    <div class="sol-mockup-icon">🛡️</div>
+                    <div class="sol-mockup-title">Async Partner Retry</div>
+                    <div class="sol-mockup-sub">Повна ізоляція API-збоїв партнерів у фоновому режимі</div>
                 </div>
+            </div>
+
+            <!-- Solution 5: Ordered PDF Labels -->
+            <div class="solution-item-card no-image">
+                <div>
+                    <span class="sol-problem-tag">🎯 Відповідь на Проблему 5</span>
+                    <h3 class="sol-heading">Ordered PDF Labels — генерація маркувань в 1 клік</h3>
+                    <div class="sol-body">
+                        Єдиний впорядкований PDF-файл з маркуваннями, сформований у суворій відповідності до порядку рядків у завантаженому файлі клієнта.
+                    </div>
+                    <ul class="sol-features">
+                        <li><strong>1 клік замість 7 кроків:</strong> відмова від Gemini, VBA-макросів та сторонніх сайтів склеювання.</li>
+                        <li><strong>Суворий порядок черговості:</strong> сторінка 1 у PDF відповідає рядку 1 у завантаженому файлі.</li>
+                        <li><strong>Миттєва поклейка на складі:</strong> нуль ризиків пересорту та скорочення часу обробки до 1 хвилини.</li>
+                    </ul>
+                </div>
+                <div class="sol-mockup-box">
+                    <div class="sol-mockup-icon">🏷️</div>
+                    <div class="sol-mockup-title">Ordered PDF Labels</div>
+                    <div class="sol-mockup-sub">1 файл · Суворий порядок черговості · 1 клік</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- BUSINESS IMPACT SECTION -->
+<section class="section gray-bg">
+    <div class="container">
+        <h2 class="section-title">Очікуваний бізнес-результат<br><span class="hl">від впровадження Масового створення 2.0</span></h2>
+        
+        <div class="biz-impact-grid">
+            <div class="biz-impact-card">
+                <div class="biz-icon">📉</div>
+                <div class="biz-val">-80 тис. <span class="biz-val-sub">(-40%)</span></div>
+                <div class="biz-title">Зменшення кількості помилок</div>
+                <p class="biz-desc">Завдяки авто-нормалізації контактів/адрес, розумній превалідації та вибору стандартних розмірів посилки замість обов'язкового ручного введення трьох полів габаритів.</p>
+            </div>
+            
+            <div class="biz-impact-card">
+                <div class="biz-icon">🎯</div>
+                <div class="biz-val">до 20% <span class="biz-val-sub">(+45%)</span></div>
+                <div class="biz-title">Збільшення конверсії у створення</div>
+                <p class="biz-desc">Зростання частки успішних завантажень з 14% до 20% (+45% відносно) завдяки людським поясненням помилок від AI-асистента та редагуванню проблемних рядків безпосередньо в кабінеті.</p>
+            </div>
+            
+            <div class="biz-impact-card">
+                <div class="biz-icon">📦</div>
+                <div class="biz-val">+1 000 <span class="biz-val-sub">/місяць</span></div>
+                <div class="biz-title">Приріст створених посилок</div>
+                <p class="biz-desc">Збільшення щомісячного обсягу відправлень через масовий імпорт завдяки зручності процесу та автоматичному отриманню впорядкованих PDF-маркувань в 1 клік.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- RESEARCH & QUOTES -->
-<section class="section gray-bg">
+<!-- RESEARCH & QUOTES (2 USERS FEEDBACK ON PROPOSED SOLUTIONS) -->
+<section class="section" style="background:#fff;">
     <div class="container">
-        <h2 class="section-title">Результати досліджень та фідбек</h2>
-        <div class="insight-grid">
-            <div class="insight-card"><div class="insight-num">86%</div><h4>Сесій завершуються невдачею</h4><p>Клієнти покидають процес через нечитабельні помилки та відсутність підказок щодо виправлення.</p></div>
-            <div class="insight-card"><div class="insight-num">7 кроків</div><h4>Для отримання лейб</h4><p>Реальний маршрут клієнта в Литві: Gemini → VBA-макрос → Tool24 — замість одного кліку в кабінеті.</p></div>
-            <div class="insight-card"><div class="insight-num">2 країни</div><h4>Писали про нерозуміння помилок</h4><p>Франція та Литва зверталися безпосередньо до продуктової команди: «Що мені тут робити?»</p></div>
-        </div>
-        <h3 style="font-size:1.2rem;font-weight:800;text-align:center;text-transform:uppercase;margin:0 0 28px;">Пряма мова — Глибинні інтерв'ю</h3>
-        <div class="quotes-grid">
-            <div class="quote-card">
-                <p class="quote-text">«Видає купу помилок — що я роблю не так? Я беру звіт, копіюю логи у корпоративний Gemini і прошу пояснити та виставити правильний порядок.»</p>
-                <div class="user-profile"><img src="https://randomuser.me/api/portraits/men/34.jpg" class="user-avatar" alt="Mykyta"><div class="user-info"><h5>Mykyta</h5><span><img src="https://flagcdn.com/w20/lt.png" class="flag" alt="LT"> Литва/Латвія · ~300 відпр./тиждень</span></div></div>
+        <h2 class="section-title">Фідбек користувачів на запропоновані рішення<br><span class="hl">(Глибинні інтерв'ю)</span></h2>
+        
+        <div class="interview-grid">
+            
+            <!-- User 1: Mykyta -->
+            <div class="interview-card">
+                <div class="interview-user">
+                    <img src="https://randomuser.me/api/portraits/men/34.jpg" class="interview-avatar" alt="Mykyta">
+                    <div>
+                        <h4>Микита</h4>
+                        <span><img src="https://flagcdn.com/w20/lt.png" class="flag" alt="LT"> Литва / Латвія · B2B відправник (~300 посилок/тиждень)</span>
+                    </div>
+                </div>
+
+                <div class="interview-topic">
+                    <strong>Про Ordered PDF та пресети розмірів:</strong>
+                    <p>«Якщо лейби вивантажуватимуться одним файлом у строгому порядку рядків, а розмір можна буде обрати як готову посилку S/M/L — це зекономить нам до 40 хвилин на кожній партії. Макроси в Excel та склеювання на сторонніх сайтах більше не знадобляться.»</p>
+                </div>
+
+                <div class="interview-topic">
+                    <strong>Про AI-підказки та виправлення помилок:</strong>
+                    <p>«AI-пояснення — це саме те, чого не вистачало. Замість того, щоб копіювати лог помилок у ChatGPT чи дзвонити підтримці, я одразу бачу, в якому рядку проблема і як її виправити в один клік.»</p>
+                </div>
             </div>
-            <div class="quote-card">
-                <p class="quote-text">«Клієнт дав адресу одним рядком. Я розбивала формулами Excel. Потім з'ясувалося — номери квартир загубилися, і GLS повернув посилки — кур'єр не знайшов одержувачів.»</p>
-                <div class="user-profile"><img src="https://randomuser.me/api/portraits/women/55.jpg" class="user-avatar" alt="Liudmyla"><div class="user-info"><h5>Liudmyla</h5><span><img src="https://flagcdn.com/w20/es.png" class="flag" alt="ES"> Іспанія · кейс Binance, 117 відправлень</span></div></div>
+
+            <!-- User 2: Liudmyla -->
+            <div class="interview-card">
+                <div class="interview-user">
+                    <img src="https://randomuser.me/api/portraits/women/55.jpg" class="interview-avatar" alt="Liudmyla">
+                    <div>
+                        <h4>Людмила</h4>
+                        <span><img src="https://flagcdn.com/w20/es.png" class="flag" alt="ES"> Іспанія · менеджер по роботі з ключовими клієнтами</span>
+                    </div>
+                </div>
+
+                <div class="interview-topic">
+                    <strong>Про авто-парсинг адрес та налаштування колонок:</strong>
+                    <p>«Можливість вибрати тільки потрібні колонки та вставити адресу одним рядком повністю вирішує наш головний біль в Іспанії. Раніше ми втрачали квартири при формульному розбитті і GLS повертав посилки. Тепер це буде автоматично і без ризиків.»</p>
+                </div>
+
+                <div class="interview-topic">
+                    <strong>Про автокорекцію ваги інвойсу:</strong>
+                    <p>«Автокорекція округлення ваги інвойсу зніме нескінченні блокування відправлень, коли через 0.01 кг розбіжності відхилявся весь файл на 20 позицій. Це величезне полегшення для клієнтів.»</p>
+                </div>
             </div>
-            <div class="quote-card">
-                <p class="quote-text">«Я не розумію, що мені тут робити» — менеджери з Франції напряму писали продуктовій команді, не маючи змоги розшифрувати технічні повідомлення про помилки.»</p>
-                <div class="user-profile"><img src="https://randomuser.me/api/portraits/women/44.jpg" class="user-avatar" alt="France"><div class="user-info"><h5>Команда France</h5><span><img src="https://flagcdn.com/w20/fr.png" class="flag" alt="FR"> Франція · звернення до Product Team</span></div></div>
-            </div>
-            <div class="quote-card">
-                <p class="quote-text">«Якщо відправляти 300 посилок через кабінет — повертається 20 пакетів по 15 штук. Ноутбук підвисає на 2 хвилини, а порядок переплутаний. Без макросу оператори вмирали б.»</p>
-                <div class="user-profile"><img src="https://randomuser.me/api/portraits/men/34.jpg" class="user-avatar" alt="Mykyta"><div class="user-info"><h5>Mykyta</h5><span><img src="https://flagcdn.com/w20/lt.png" class="flag" alt="LT"> Литва/Латвія · демонстрація екрана</span></div></div>
-            </div>
-            <div class="quote-card">
-                <p class="quote-text">«Клієнти купують наші стандартні коробки. Але щоразу треба вбивати Д×Ш×В на кожну посилку вручну — і в 85% завантажень вони це пропускають.»</p>
-                <div class="user-profile"><img src="https://randomuser.me/api/portraits/women/55.jpg" class="user-avatar" alt="Liudmyla"><div class="user-info"><h5>Liudmyla</h5><span><img src="https://flagcdn.com/w20/es.png" class="flag" alt="ES"> Іспанія</span></div></div>
-            </div>
-            <div class="quote-card">
-                <p class="quote-text">«Клієнт хотів відправити харчові добавки та взуття в Україну. Вводиш HS-код — підтягує іншу назву, а створити свій не дає або неможливо знайти. Так і не змогли відправити.»</p>
-                <div class="user-profile"><img src="https://randomuser.me/api/portraits/women/55.jpg" class="user-avatar" alt="Liudmyla"><div class="user-info"><h5>Liudmyla</h5><span><img src="https://flagcdn.com/w20/es.png" class="flag" alt="ES"> Іспанія · HS-код кейс</span></div></div>
-            </div>
+
         </div>
     </div>
 </section>
 
 <!-- FAQ КЛІЄНТ -->
-<section class="section" style="background:#fff;">
+<section class="section gray-bg">
     <div class="container">
         <h2 class="section-title">FAQ для клієнтів</h2>
         <div class="accordion">
-            <div class="acc-item"><button class="acc-header" onclick="tog(this)"><span>1. Чи потрібно буде змінювати свій шаблон файлу?</span><span class="acc-icon">+</span></button><div class="acc-content">Ні. Система адаптується під ваш формат — нормалізує телефони, розбирає адреси та конвертує числові формати автоматично. Ваш поточний файл продовжить працювати.</div></div>
-            <div class="acc-item"><button class="acc-header" onclick="tog(this)"><span>2. Що станеться, якщо у файлі є помилки?</span><span class="acc-icon">+</span></button><div class="acc-content">Замість технічних кодів ви побачите просту підказку: що саме не так, як виправити і приклад правильного значення. AI-асистент відповість на будь-яке питання прямо на сторінці.</div></div>
-            <div class="acc-item"><button class="acc-header" onclick="tog(this)"><span>3. Як отримати лейби у правильному порядку?</span><span class="acc-icon">+</span></button><div class="acc-content">Після успішного завантаження — один клік «Завантажити лейби». Єдиний PDF, де лейба №1 відповідає рядку 1 вашого файлу. Жодних зовнішніх інструментів.</div></div>
-            <div class="acc-item"><button class="acc-header" onclick="tog(this)"><span>4. Що робити при помилці «сервіс партнера недоступний»?</span><span class="acc-icon">+</span></button><div class="acc-content">Нічого. Система автоматично повторить запит у фоновому режимі через 5–15 секунд і завершить оформлення. Ви побачите результат — а не технічний збій.</div></div>
+            <div class="acc-item"><button class="acc-header" onclick="toggleAccordion(this)"><span>1. Чи потрібно буде змінювати свій шаблон файлу?</span><span class="acc-icon">+</span></button><div class="acc-content">Ні. Система адаптується під ваш формат — нормалізує телефони, розбирає адреси та конвертує числові формати автоматично. Ваш поточний файл продовжить працювати.</div></div>
+            <div class="acc-item"><button class="acc-header" onclick="toggleAccordion(this)"><span>2. Що станеться, якщо у файлі є помилки?</span><span class="acc-icon">+</span></button><div class="acc-content">Замість технічних кодів ви побачите просту підказку: що саме не так, як виправити і приклад правильного значення. AI-асистент відповість на будь-яке питання прямо на сторінці.</div></div>
+            <div class="acc-item"><button class="acc-header" onclick="toggleAccordion(this)"><span>3. Як отримати маркування у правильному порядку?</span><span class="acc-icon">+</span></button><div class="acc-content">Після успішного завантаження — один клік «Завантажити маркування». Єдиний PDF, де лейба №1 відповідає рядку 1 вашого файлу. Жодних зовнішніх інструментів.</div></div>
+            <div class="acc-item"><button class="acc-header" onclick="toggleAccordion(this)"><span>4. Що робити при помилці «сервіс партнера недоступний»?</span><span class="acc-icon">+</span></button><div class="acc-content">Нічого. Система автоматично повторить запит у фоновому режимі через 5–15 секунд і завершить оформлення. Ви побачите результат — а не технічний збій.</div></div>
         </div>
     </div>
 </section>
 
 <!-- INTERNAL FAQ -->
-<section class="section gray-bg">
+<section class="section" style="background:#fff;">
     <div class="container">
         <h2 class="section-title">Internal FAQ</h2>
         <div class="accordion accordion-dark">
-            <div class="acc-item"><button class="acc-header" onclick="tog(this)"><span>[+] Чому це стратегічно важливо саме зараз?</span><span class="acc-icon" style="color:#666;">+</span></button><div class="acc-content">При конверсії 14% і 180 000+ помилок на місяць масовий імпорт не є конкурентною перевагою — він є бар'єром. Виправлення безпосередньо впливає на ретенцію B2B-клієнтів та знижує навантаження на сейлз і підтримку.</div></div>
-            <div class="acc-item"><button class="acc-header" onclick="tog(this)"><span>[+] Які метрики ми змінюємо?</span><span class="acc-icon" style="color:#666;">+</span></button><div class="acc-content">Bulk Upload Error Rate (→ Looker), конверсія завантаження файлу (14% → ціль 60%+), Time-to-Create, кількість звернень до підтримки з питань масового імпорту, NPS B2B-сегменту.</div></div>
-            <div class="acc-item"><button class="acc-header" onclick="tog(this)"><span>[+] Cost of Delay: що буде, якщо нічого не робити?</span><span class="acc-icon" style="color:#666;">+</span></button><div class="acc-content">Клієнти продовжуватимуть використовувати сторонні макроси (Gemini, Tool24, VBA), підвищуючи ризик витоку даних. 86% сесій завершуватимуться невдачею. GLS і Packeta вже мають пресети та локалізовані помилки.</div></div>
-            <div class="acc-item"><button class="acc-header" onclick="tog(this)"><span>[+] Наша конкурентна перевага після реалізації?</span><span class="acc-icon" style="color:#666;">+</span></button><div class="acc-content">AI-асистент в контексті масового завантаження, авто-нормалізація адрес і авто-розрахунок ваги інвойсу — цього немає ні у GLS, ні у Packeta. Ordered PDF Labels з 1 кліком — унікальна пропозиція на ринку.</div></div>
+            <div class="acc-item"><button class="acc-header" onclick="toggleAccordion(this)"><span>[+] Чому це стратегічно важливо саме зараз?</span><span class="acc-icon" style="color:#666;">+</span></button><div class="acc-content">При конверсії 14% і 180 000+ помилок на місяць масовий імпорт не є конкурентною перевагою — він є бар'єром. Виправлення безпосередньо впливає на ретенцію B2B-клієнтів та знижує навантаження на сейлз і підтримку.</div></div>
+            <div class="acc-item"><button class="acc-header" onclick="toggleAccordion(this)"><span>[+] Які метрики ми змінюємо?</span><span class="acc-icon" style="color:#666;">+</span></button><div class="acc-content">Bulk Upload Error Rate (→ Looker), конверсія завантаження файлу (14% → ціль 60%+), Time-to-Create, кількість звернень до підтримки з питань масового імпорту, NPS B2B-сегменту.</div></div>
+            <div class="acc-item"><button class="acc-header" onclick="toggleAccordion(this)"><span>[+] Cost of Delay: що буде, якщо нічого не робити?</span><span class="acc-icon" style="color:#666;">+</span></button><div class="acc-content">Клієнти продовжуватимуть використовувати сторонні макроси (Gemini, Tool24, VBA), підвищуючи ризик витоку даних. 86% сесій завершуватимуться невдачею. GLS і Packeta вже мають пресети та локалізовані помилки.</div></div>
+            <div class="acc-item"><button class="acc-header" onclick="toggleAccordion(this)"><span>[+] Наша конкурентна перевага після реалізації?</span><span class="acc-icon" style="color:#666;">+</span></button><div class="acc-content">AI-асистент в контексті масового завантаження, авто-нормалізація адрес і авто-розрахунок ваги інвойсу — цього немає ні у GLS, ні у Packeta. Ordered PDF Labels з 1 кліком — унікальна пропозиція на ринку.</div></div>
         </div>
     </div>
 </section>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lb" onclick="closeLb()">
-    <span class="lb-close">&times;</span>
-    <img id="lb-img" src="" alt="">
+<!-- ── INTERACTIVE SOLUTION LIGHTBOX WITH ZOOM & PAN ── -->
+<div id="solution-lightbox" class="solution-lightbox">
+    <div class="solution-lightbox-backdrop" onclick="closeSolutionLightbox()"></div>
+    
+    <!-- Top Zoom Controls -->
+    <div class="slb-zoom-controls" onclick="event.stopPropagation()">
+        <button class="slb-zoom-btn" onclick="slbZoom(-0.25)" title="Зменшити (−)">−</button>
+        <button class="slb-zoom-btn slb-zoom-reset" onclick="slbResetZoom()" title="Скинути масштаб (0)">100%</button>
+        <button class="slb-zoom-btn" onclick="slbZoom(0.25)" title="Збільшити (+)">+</button>
+    </div>
+
+    <!-- Close Button -->
+    <button class="slb-close-btn" onclick="closeSolutionLightbox()" aria-label="Закрити">&times;</button>
+
+    <!-- Main Content Area -->
+    <div class="solution-lightbox-inner">
+        <button class="slb-nav slb-prev" onclick="changeSolutionImage(-1); event.stopPropagation();" aria-label="Попереднє">&#8249;</button>
+        
+        <div class="slb-img-wrap" id="slb-img-wrap">
+            <img id="solution-lightbox-img" src="" alt="Zoomed view" draggable="false">
+        </div>
+        
+        <button class="slb-nav slb-next" onclick="changeSolutionImage(1); event.stopPropagation();" aria-label="Наступне">&#8250;</button>
+    </div>
+
+    <!-- Thumbnail Dots -->
+    <div class="slb-dots" id="slb-dots" onclick="event.stopPropagation()"></div>
 </div>
 
 <script>
-function tog(btn){const i=btn.parentElement;i.classList.toggle('open');btn.querySelector('.acc-icon').textContent=i.classList.contains('open')?'−':'+';}
-function openLb(src){document.getElementById('lb-img').src=src;document.getElementById('lb').classList.add('active');document.body.style.overflow='hidden';}
-function closeLb(){document.getElementById('lb').classList.remove('active');document.body.style.overflow='auto';}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+    function toggleAccordion(btn) {
+        const item = btn.parentElement;
+        item.classList.toggle('open');
+        const icon = btn.querySelector('.acc-icon');
+        icon.textContent = item.classList.contains('open') ? '−' : '+';
+    }
+
+    // ── Interactive Lightbox Gallery with Zoom & Pan ──
+    const solutionImages = [
+        { src: 'benchmark_gls_success.png', alt: 'GLS - Успішний імпорт' },
+        { src: 'benchmark_gls_error.png', alt: 'GLS - Помилка імпорту' },
+        { src: 'benchmark_gls_summary.png', alt: 'GLS - Пресети розмірів' },
+        { src: 'benchmark_zasilkovna_upload.png', alt: 'Packeta - Завантаження файлу' },
+        { src: 'benchmark_zasilkovna_template.png', alt: 'Packeta - Вибір шаблону' },
+        { src: 'benchmark_zasilkovna_edit.png', alt: 'Packeta - Редагування помилки' },
+        { src: 'benchmark_zasilkovna_unfinished.png', alt: 'Packeta - Список проблемних рядків' },
+        { src: 'solution_columns.png', alt: 'Рішення: Кастомізація колонок та пресети' },
+        { src: 'solution_ai.jpeg', alt: 'Рішення: Вбудований AI-асистент' }
+    ];
+    let slbCurrent = 0;
+    let slbScale = 1;
+    let slbTransX = 0, slbTransY = 0;
+    let slbDragging = false;
+    let slbDragStart = { x: 0, y: 0 };
+    const MIN_SCALE = 1, MAX_SCALE = 5;
+
+    function slbApplyTransform() {
+        const img = document.getElementById('solution-lightbox-img');
+        img.style.transform = `translate(${slbTransX}px, ${slbTransY}px) scale(${slbScale})`;
+        img.style.cursor = slbScale > 1 ? 'grab' : 'zoom-in';
+        const pct = Math.round(slbScale * 100);
+        document.querySelector('.slb-zoom-reset').textContent = pct + '%';
+    }
+
+    function slbResetZoom() {
+        slbScale = 1; slbTransX = 0; slbTransY = 0;
+        slbApplyTransform();
+    }
+
+    function slbZoom(delta) {
+        slbScale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, slbScale + delta));
+        if (slbScale === 1) { slbTransX = 0; slbTransY = 0; }
+        slbApplyTransform();
+    }
+
+    // Mouse wheel zoom
+    document.getElementById('slb-img-wrap').addEventListener('wheel', (e) => {
+        e.preventDefault();
+        const delta = e.deltaY < 0 ? 0.2 : -0.2;
+        slbZoom(delta);
+    }, { passive: false });
+
+    // Drag to pan
+    const slbWrap = document.getElementById('slb-img-wrap');
+    slbWrap.addEventListener('mousedown', (e) => {
+        if (slbScale <= 1) return;
+        slbDragging = true;
+        slbDragStart = { x: e.clientX - slbTransX, y: e.clientY - slbTransY };
+        document.getElementById('solution-lightbox-img').style.cursor = 'grabbing';
+        e.preventDefault();
+    });
+    document.addEventListener('mousemove', (e) => {
+        if (!slbDragging) return;
+        slbTransX = e.clientX - slbDragStart.x;
+        slbTransY = e.clientY - slbDragStart.y;
+        slbApplyTransform();
+    });
+    document.addEventListener('mouseup', () => {
+        if (!slbDragging) return;
+        slbDragging = false;
+        document.getElementById('solution-lightbox-img').style.cursor = slbScale > 1 ? 'grab' : 'zoom-in';
+    });
+
+    // Double-click zoom in / reset
+    slbWrap.addEventListener('dblclick', () => {
+        if (slbScale > 1) { slbResetZoom(); } else { slbZoom(1.2); }
+    });
+
+    function buildSlbDots() {
+        const wrap = document.getElementById('slb-dots');
+        wrap.innerHTML = '';
+        solutionImages.forEach((_, i) => {
+            const d = document.createElement('button');
+            d.className = 'slb-dot' + (i === slbCurrent ? ' active' : '');
+            d.setAttribute('aria-label', 'Зображення ' + (i + 1));
+            d.onclick = (e) => { e.stopPropagation(); goToSlbImage(i); };
+            wrap.appendChild(d);
+        });
+    }
+
+    function goToSlbImage(index) {
+        slbCurrent = (index + solutionImages.length) % solutionImages.length;
+        slbResetZoom();
+        const img = document.getElementById('solution-lightbox-img');
+        img.style.opacity = '0';
+        setTimeout(() => {
+            img.src = solutionImages[slbCurrent].src;
+            img.alt = solutionImages[slbCurrent].alt;
+            img.style.opacity = '1';
+        }, 150);
+        document.querySelectorAll('.slb-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === slbCurrent);
+        });
+    }
+
+    function openSolutionLightbox(index) {
+        slbCurrent = index;
+        slbResetZoom();
+        buildSlbDots();
+        const img = document.getElementById('solution-lightbox-img');
+        img.src = solutionImages[slbCurrent].src;
+        img.alt = solutionImages[slbCurrent].alt;
+        document.getElementById('solution-lightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSolutionLightbox() {
+        slbResetZoom();
+        document.getElementById('solution-lightbox').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    function changeSolutionImage(dir) {
+        goToSlbImage(slbCurrent + dir);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        const lb = document.getElementById('solution-lightbox');
+        if (!lb.classList.contains('active')) return;
+        if (e.key === 'ArrowRight') changeSolutionImage(1);
+        if (e.key === 'ArrowLeft')  changeSolutionImage(-1);
+        if (e.key === 'Escape')     closeSolutionLightbox();
+        if (e.key === '+' || e.key === '=') slbZoom(0.25);
+        if (e.key === '-')                  slbZoom(-0.25);
+        if (e.key === '0')                  slbResetZoom();
+    });
 </script>
 </body>
 </html>
